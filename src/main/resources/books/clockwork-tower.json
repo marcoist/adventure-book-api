@@ -1,0 +1,606 @@
+{
+  "title": "The Clockwork Tower",
+  "author": "Marcus Gearwright",
+  "difficulty": "MEDIUM",
+  "categories": ["STEAMPUNK", "MYSTERY", "ADVENTURE"],
+  "sections": [
+    {
+      "id": 1,
+      "type": "BEGIN",
+      "text": "You stand before the legendary Clockwork Tower, a massive bronze structure that rises into the clouds. Legend says that whoever reaches the top will find the Eternal Gear - an artifact that grants one wish. The tower's entrance is a giant gear-shaped door, slowly rotating. Steam hisses from pipes along the walls. Two paths lead inside: a narrow maintenance shaft to your left, and the main rotating entrance ahead.",
+      "options": [
+        {
+          "description": "Squeeze through the maintenance shaft",
+          "gotoId": 2
+        },
+        {
+          "description": "Time your jump through the rotating door",
+          "gotoId": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "NODE",
+      "text": "You crawl through the dusty maintenance shaft. Cobwebs brush your face, but you emerge safely into a quiet storage room filled with spare gears and oil cans. Among the junk, you spot a rusty wrench that might be useful. A ladder leads up to the next floor, and you hear mechanical clicking sounds from above.",
+      "options": [
+        {
+          "description": "Take the wrench and climb the ladder",
+          "gotoId": 4
+        },
+        {
+          "description": "Ignore the wrench and climb quickly",
+          "gotoId": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "NODE",
+      "text": "You time your jump perfectly and roll through the rotating door! You land in a grand foyer with a checkered floor. Brass automatons stand frozen along the walls like suits of armor. In the center, a fountain sprays oil instead of water. Two staircases spiral upward - one made of polished brass, the other of tarnished copper covered in mysterious symbols.",
+      "options": [
+        {
+          "description": "Take the polished brass staircase",
+          "gotoId": 6
+        },
+        {
+          "description": "Take the copper staircase with symbols",
+          "gotoId": 7
+        },
+        {
+          "description": "Examine the automatons more closely",
+          "gotoId": 8
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "NODE",
+      "text": "The wrench feels reassuring in your grip as you climb. You emerge into a room dominated by a massive clockwork mechanism - gears the size of cartwheels spin and interlock. A mechanical spider the size of a dog scuttles toward you! Its brass legs click on the metal floor.",
+      "options": [
+        {
+          "description": "Use the wrench to jam its legs",
+          "gotoId": 9
+        },
+        {
+          "description": "Try to run past it",
+          "gotoId": 10
+        },
+        {
+          "description": "Look for another way around",
+          "gotoId": 11
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "NODE",
+      "text": "You scramble up the ladder and find yourself face-to-face with a mechanical spider! Without a weapon, you're forced to dodge its snapping mandibles. It catches your arm with a sharp leg, drawing blood. You manage to kick it away and spot an open vent you could escape through.",
+      "options": [
+        {
+          "description": "Dive into the vent",
+          "gotoId": 11,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": 2,
+            "text": "The spider's leg sliced your arm badly."
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "NODE",
+      "text": "The brass staircase seems safe at first, but halfway up, the stairs begin folding into the wall! You run, leaping up two steps at a time as they collapse beneath you. You barely make it to a landing, heart pounding. A door ahead leads to the Observatory level.",
+      "options": [
+        {
+          "description": "Catch your breath, then enter the Observatory",
+          "gotoId": 12
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "NODE",
+      "text": "As you climb the copper stairs, the symbols begin to glow with an amber light. You feel warmth spreading through your body - the ancient protective runes are healing old wounds and filling you with energy! At the top, you find a door marked 'The Inventor's Workshop.'",
+      "options": [
+        {
+          "description": "Enter the Inventor's Workshop",
+          "gotoId": 13,
+          "consequence": {
+            "type": "GAIN_HEALTH",
+            "value": 3,
+            "text": "The healing runes restored your vitality!"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "NODE",
+      "text": "You approach one of the automatons. Its glass eyes suddenly flicker to life! 'INTRUDER DETECTED,' it announces in a grinding voice. Before you can react, all six automatons activate and surround you. Their arms end in various tools - saws, drills, and pincers.",
+      "options": [
+        {
+          "description": "Shout 'I seek the Eternal Gear!'",
+          "gotoId": 14
+        },
+        {
+          "description": "Fight your way through",
+          "gotoId": 15
+        },
+        {
+          "description": "Drop to the ground and crawl between their legs",
+          "gotoId": 16
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "NODE",
+      "text": "You swing the wrench into the spider's front legs, jamming them together! The creature collapses, gears grinding uselessly. Among its wreckage, you find a small golden key and a note: 'The true path lies where time stands still.' There's an elevator shaft and a spiral staircase ahead.",
+      "options": [
+        {
+          "description": "Take the elevator shaft using the golden key",
+          "gotoId": 17
+        },
+        {
+          "description": "Climb the spiral staircase",
+          "gotoId": 12
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "NODE",
+      "text": "You try to sprint past the mechanical spider, but it's faster than you expected! It leaps onto your back, mandibles snapping near your ear. You throw yourself against the wall, crushing it, but not before it injects you with some kind of numbing venom. Your movements feel sluggish.",
+      "options": [
+        {
+          "description": "Push forward despite the venom",
+          "gotoId": 12,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": 3,
+            "text": "The spider's venom courses through your veins."
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "NODE",
+      "text": "You find a side passage that leads around the spider's lair. The tunnel opens into a beautiful room - the Steam Garden. Mechanical flowers made of copper and silver bloom eternally, releasing small puffs of fragrant steam. A fountain of warm water bubbles in the center. Drinking from it might be restorative. Stairs lead upward.",
+      "options": [
+        {
+          "description": "Drink from the fountain",
+          "gotoId": 18
+        },
+        {
+          "description": "Admire the garden briefly, then climb the stairs",
+          "gotoId": 13
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "NODE",
+      "text": "The Observatory is breathtaking - a domed room with a glass ceiling showing the stars. A massive telescope points upward, and star charts cover every wall. An old woman sits at a desk, her hair silver as starlight. 'Another seeker,' she sighs. 'The Eternal Gear is close, but so is the Guardian. You must choose: face it with wisdom, or with courage.'",
+      "options": [
+        {
+          "description": "'I choose wisdom.'",
+          "gotoId": 19
+        },
+        {
+          "description": "'I choose courage.'",
+          "gotoId": 20
+        },
+        {
+          "description": "'Who are you?'",
+          "gotoId": 21
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "NODE",
+      "text": "The Inventor's Workshop is a mad genius's paradise. Half-finished automatons, blueprints, and bubbling beakers fill every surface. A mechanical owl hoots from a perch. On a workbench, you see a pair of steam-powered gauntlets and a cryptic map of the tower's upper floors. A trapdoor in the ceiling leads up.",
+      "options": [
+        {
+          "description": "Put on the steam gauntlets",
+          "gotoId": 22
+        },
+        {
+          "description": "Study the map carefully",
+          "gotoId": 23
+        },
+        {
+          "description": "Talk to the mechanical owl",
+          "gotoId": 24
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "NODE",
+      "text": "The automatons freeze. 'SEEKER PROTOCOL ACTIVATED,' they chime in unison. They part, revealing a hidden passage behind them. 'May you prove worthy,' they intone as you pass. The passage spirals upward through the tower's core.",
+      "options": [
+        {
+          "description": "Follow the hidden passage",
+          "gotoId": 17
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "NODE",
+      "text": "You fight valiantly, ducking saw blades and dodging pincers! You manage to topple two automatons, but the others overwhelm you. Drills and saws tear into you before you finally break free, battered and bleeding. You stumble toward the copper staircase.",
+      "options": [
+        {
+          "description": "Limp up the copper staircase",
+          "gotoId": 7,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": 4,
+            "text": "The automatons wounded you severely."
+          }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "NODE",
+      "text": "You drop flat and scramble between the automatons' legs! Their slow mechanical reflexes can't track you. You emerge behind them and dash up the brass staircase before they can turn around. Clever!",
+      "options": [
+        {
+          "description": "Continue up the brass staircase",
+          "gotoId": 6
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "NODE",
+      "text": "The elevator rises smoothly through the tower's heart. Through the grated floor, you see the entire mechanism of the tower - millions of gears working in perfect harmony. The elevator stops at a grand chamber: the Hall of Clocks. Hundreds of timepieces tick and tock, but one enormous clock on the far wall has stopped. Its hands point to midnight.",
+      "options": [
+        {
+          "description": "Approach the stopped clock",
+          "gotoId": 25
+        },
+        {
+          "description": "Search for another way forward",
+          "gotoId": 26
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "NODE",
+      "text": "The water tastes like mint and honey! Warmth spreads through your body, healing cuts and easing bruises. You feel refreshed and ready for whatever lies ahead. The mechanical flowers seem to bow toward you approvingly.",
+      "options": [
+        {
+          "description": "Thank the garden and climb the stairs",
+          "gotoId": 13,
+          "consequence": {
+            "type": "GAIN_HEALTH",
+            "value": 4,
+            "text": "The magical fountain restored your health!"
+          }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "type": "NODE",
+      "text": "'Wisdom,' she nods approvingly. She hands you a small crystal lens. 'The Guardian is an illusion given form. Look through this when you face it, and you will see its true nature - a puzzle to be solved, not a beast to be fought.' She points to a staircase behind a star chart.",
+      "options": [
+        {
+          "description": "Take the lens and climb to the Guardian's chamber",
+          "gotoId": 27
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "type": "NODE",
+      "text": "'Courage,' she says with a sad smile. She opens a chest and retrieves a gleaming sword made of interlocking gears. 'This blade can cut through any clockwork. But remember - not all battles are won by fighting.' She gestures to a door marked with a gear symbol.",
+      "options": [
+        {
+          "description": "Take the gear sword and face the Guardian",
+          "gotoId": 28
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "type": "NODE",
+      "text": "'I am Celestia, the Tower's last guardian - before the mechanical one took over.' Her eyes are ancient and tired. 'I built this tower to protect the Eternal Gear, but my creation became too protective. Now it destroys all seekers.' She studies you. 'But you... you might be different. Will you choose wisdom, or courage?'",
+      "options": [
+        {
+          "description": "'I choose wisdom.'",
+          "gotoId": 19
+        },
+        {
+          "description": "'I choose courage.'",
+          "gotoId": 20
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "type": "NODE",
+      "text": "The steam gauntlets hiss as they power up! They're incredible - you feel ten times stronger. You punch the wall experimentally and leave a fist-shaped dent. These will be useful against whatever guards the Eternal Gear.",
+      "options": [
+        {
+          "description": "Head up through the trapdoor",
+          "gotoId": 12
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "type": "NODE",
+      "text": "The map reveals a secret: there's a hidden passage behind the Hall of Clocks that bypasses the Guardian entirely! You memorize the route. 'Smart one,' the mechanical owl hoots approvingly. Knowledge is power.",
+      "options": [
+        {
+          "description": "Head up through the trapdoor with your new knowledge",
+          "gotoId": 17
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "type": "NODE",
+      "text": "'Hoot! A visitor!' the owl rotates its head 360 degrees. 'I am Cogsworth, the Inventor's assistant. Want some advice? The Guardian fears only one thing: its own reflection. Find the Mirror Chamber if you want to survive!' The owl goes back to preening its copper feathers.",
+      "options": [
+        {
+          "description": "Thank Cogsworth and climb through the trapdoor",
+          "gotoId": 12
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "type": "NODE",
+      "text": "As you approach the stopped clock, it begins to move! The hands spin wildly, and the clock face swings open like a door, revealing a narrow passage. 'The path where time stands still,' you remember. This must be the secret way to the top!",
+      "options": [
+        {
+          "description": "Enter the passage behind the clock",
+          "gotoId": 29
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "type": "NODE",
+      "text": "You search the hall and find a small door hidden behind a grandfather clock. It leads to a narrow staircase spiraling upward. The ticking of clocks grows louder as you climb, almost deafening. At the top, you face a massive iron door.",
+      "options": [
+        {
+          "description": "Open the iron door",
+          "gotoId": 30
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "type": "NODE",
+      "text": "You enter the Guardian's chamber - a circular room with the Eternal Gear floating above a pedestal at its center. Between you and it stands the Guardian: a terrifying mechanical dragon made of a thousand spinning gears! It roars, shooting steam from its nostrils. You raise the crystal lens to your eye...",
+      "options": [
+        {
+          "description": "Look at the Guardian through the lens",
+          "gotoId": 31
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "type": "NODE",
+      "text": "You enter the Guardian's chamber with the gear sword ready. A mechanical dragon rises before you - massive, terrifying, made of interlocking gears! It roars and lunges. This is a fight for the ages!",
+      "options": [
+        {
+          "description": "Fight with everything you have!",
+          "gotoId": 32
+        },
+        {
+          "description": "Look for a weakness before engaging",
+          "gotoId": 33
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "type": "NODE",
+      "text": "The passage takes you through the spaces between seconds, where even the dust hangs frozen in the air. You emerge in a small chamber directly beneath the Eternal Gear! A ladder leads up to a trapdoor. You can hear mechanical roaring above - the Guardian must be on the other side.",
+      "options": [
+        {
+          "description": "Quietly climb up and try to grab the gear while the Guardian is distracted",
+          "gotoId": 34
+        },
+        {
+          "description": "Make noise to draw the Guardian away first",
+          "gotoId": 35
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "type": "NODE",
+      "text": "The door opens onto the Guardian's chamber! The mechanical dragon is waiting, as if it knew you were coming. It strikes immediately, and you barely dodge its razor-sharp tail. You're in a fight now, whether you're ready or not!",
+      "options": [
+        {
+          "description": "Fight for your life!",
+          "gotoId": 36
+        },
+        {
+          "description": "Run for the Eternal Gear",
+          "gotoId": 37
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "type": "NODE",
+      "text": "Through the lens, you see the truth! The dragon is not real - it's a projection of fear, powered by a small gear box in the center of the room. The 'dragon' can't actually hurt you unless you believe in it. You walk calmly toward the gear box as the dragon's attacks pass through you like smoke.",
+      "options": [
+        {
+          "description": "Reach into the illusion and grab the gear box",
+          "gotoId": 38
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "type": "NODE",
+      "text": "You clash with the Guardian in an epic battle! The gear sword cuts through its defenses, severing limbs and slicing gears. But the dragon is relentless. It catches you with a tail swipe that sends you flying, then pins you down with one massive claw. Just as it's about to finish you, you notice a glowing core in its chest...",
+      "options": [
+        {
+          "description": "Stab the core with your last ounce of strength",
+          "gotoId": 39,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": 5,
+            "text": "The Guardian nearly destroyed you!"
+          }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "type": "NODE",
+      "text": "You circle the dragon cautiously, watching its patterns. There! In its chest, a glowing core pulses with each movement - clearly its power source and weak point. Also, you notice it has a blind spot directly behind its head where the gears don't quite align for vision.",
+      "options": [
+        {
+          "description": "Circle to its blind spot and strike the core",
+          "gotoId": 40
+        },
+        {
+          "description": "Throw something to distract it, then rush the core",
+          "gotoId": 41
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "type": "NODE",
+      "text": "You climb silently and peek through the trapdoor. The Guardian is facing away, distracted by something. The Eternal Gear floats just feet away! You could grab it and escape before the dragon even notices. Your heart pounds as you reach out...",
+      "options": [
+        {
+          "description": "Grab the gear and run!",
+          "gotoId": 42
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "type": "NODE",
+      "text": "You bang on the trapdoor and shout. The Guardian roars and you hear it stomp away to investigate. You count to ten, then slip through the trapdoor. The chamber is empty except for the floating Eternal Gear! But you hear the dragon returning - you have seconds.",
+      "options": [
+        {
+          "description": "Sprint for the gear!",
+          "gotoId": 42
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "type": "NODE",
+      "text": "You fight desperately, dodging gears and claws! Without a proper weapon, you can only defend. The Guardian is toying with you, slowly wearing you down. Just as hope fades, you spot a lever on the wall labeled 'EMERGENCY SHUTDOWN.'",
+      "options": [
+        {
+          "description": "Make a desperate dash for the lever",
+          "gotoId": 43,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": 3,
+            "text": "The Guardian wounds you as you run."
+          }
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "type": "NODE",
+      "text": "You sprint toward the Eternal Gear, but the Guardian is faster! It blocks your path, and you skid to a halt inches from its massive jaws. It roars, deafening you, and swings a claw. You dive, roll, and somehow end up behind it.",
+      "options": [
+        {
+          "description": "Keep running for the gear while you have the chance",
+          "gotoId": 42,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": 2,
+            "text": "The Guardian clips you as you dodge."
+          }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "type": "NODE",
+      "text": "Your hand closes around the gear box. The dragon illusion shatters like glass, and the room falls silent. In your hand is a small music box. When you open it, the real Eternal Gear rises from within, glowing with golden light. You have conquered the tower with wisdom!",
+      "options": [
+        {
+          "description": "Take the Eternal Gear",
+          "gotoId": 100
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "type": "NODE",
+      "text": "With a final, desperate thrust, you drive the gear sword into the Guardian's core! Light explodes outward, and the dragon freezes, then crumbles into a mountain of gears. You lie there, bleeding and exhausted, but alive. The Eternal Gear floats down toward you.",
+      "options": [
+        {
+          "description": "Reach out and take it",
+          "gotoId": 100
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "type": "NODE",
+      "text": "You move like a shadow, circling to the Guardian's blind spot. It spins, confused, unable to track you. When you're in position, you leap onto its back and plunge the gear sword directly into the glowing core! The dragon shrieks, shudders, and collapses. Victory!",
+      "options": [
+        {
+          "description": "Claim the Eternal Gear",
+          "gotoId": 100
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "type": "NODE",
+      "text": "You throw a loose gear across the room. The Guardian's head snaps toward the sound, and you charge! You slide beneath its belly and stab upward into the core. Oil sprays everywhere as the dragon convulses. You roll away as it crashes to the ground, defeated.",
+      "options": [
+        {
+          "description": "Take your prize: the Eternal Gear",
+          "gotoId": 100
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "type": "NODE",
+      "text": "Your fingers close around the Eternal Gear! It pulses with warm energy, and suddenly you're surrounded by golden light. The Guardian freezes mid-roar - the Gear's power has stopped it. You've done it! The Eternal Gear is yours!",
+      "options": [
+        {
+          "description": "Make your wish",
+          "gotoId": 100
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "type": "NODE",
+      "text": "You run for the lever, the Guardian close behind! You feel its hot steam breath on your neck. At the last second, you leap and grab the lever, pulling it down with all your weight. The Guardian stops inches from you, its gears grinding to a halt. Emergency shutdown complete!",
+      "options": [
+        {
+          "description": "Walk past the frozen Guardian and claim the Eternal Gear",
+          "gotoId": 100
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "type": "END",
+      "text": "The Eternal Gear fits perfectly in your palm, warm and humming with infinite power. You close your eyes and make your wish. When you open them, you're standing outside the Clockwork Tower. The sun is rising, painting the sky in gold and copper. Whatever you wished for, you know it will come true. You pocket the Gear and walk toward the dawn, forever changed by your adventure in the Clockwork Tower.\n\n*** VICTORY - YOU HAVE CONQUERED THE CLOCKWORK TOWER! ***"
+    }
+  ]
+}
